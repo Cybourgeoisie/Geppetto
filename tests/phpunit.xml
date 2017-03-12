@@ -1,0 +1,16 @@
+<phpunit
+	bootstrap="./bootstrap.php"
+	colors="true"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	stopOnError="false"
+	stopOnFailure="false"
+	stopOnIncomplete="false"
+	stopOnSkipped="false"
+	stopOnRisky="false"
+	timeoutForSmallTests="5"
+	timeoutForMediumTests="15"
+	timeoutForLargeTests="75"
+	verbose="true">
+</phpunit>
