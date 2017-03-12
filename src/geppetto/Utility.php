@@ -52,39 +52,4 @@ class Utility
 	{
 		return strtotime($timestamp);
 	}
-
-	/**
-	 * Return a formatted result
-	 */
-	public static function result($success, $message, $data = null)
-	{
-		return array(
-			'success' => !!$success,
-			'message' => $message,
-			'data'    => $data
-		);
-	}
-
-	/**
-	 * Return a securely obfuscated string
-	 */
-	public static function createObfuscatedString(int $hex_length = 16, bool $b_crypto_strong = false)
-	{
-		if ($hex_length < 4 || $hex_length > 64)
-		{
-			throw new \Exception('Utility::createObfuscatedString - Inappropriate hex length');
-		}
-
-		$crypto_strong = false;
-		$bytes = openssl_random_pseudo_bytes($hex_length, $crypto_strong);
-
-		if ($b_crypto_strong && !$crypto_strong)
-		{
-			// Not necessarily a bad thing if it isn't.. as long as it's long and randomish.
-			trigger_error("Utility::createObfuscatedString - Not cryptographically strong", E_USER_NOTICE);
-		}
-
-		$hex = bin2hex($bytes);
-		return $hex;
-	}
 }

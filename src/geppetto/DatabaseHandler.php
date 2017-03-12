@@ -46,7 +46,7 @@ class DatabaseHandler
 	{
 		if (!$this->db_conn)
 		{
-			throw new \Exception('Invalid DatabaseHandler object - DB conn is not set');
+			Utility::throwException('Invalid DatabaseHandler object - DB conn is not set');
 		}
 
 		// Execute query
@@ -65,12 +65,12 @@ class DatabaseHandler
 			else
 			{
 				$error = pg_result_error($sqh);
-				throw new \Exception("Encountered error while executing SQL ($sql): $error");
+				Utility::throwException("Encountered error while executing SQL ($sql): $error");
 			}
 		}
 		else
 		{
-			throw new \Exception("Did not receive response while executing SQL");
+			Utility::throwException("Did not receive response while executing SQL");
 		}
 	}
 }
