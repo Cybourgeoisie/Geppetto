@@ -11,6 +11,7 @@ services:
     volumes:
     - ./src:/var/www/src
     - ./tests:/var/www/tests
+    - ./vendor:/var/www/vendor
     - ./log/apache2:/var/log/apache2
     links:
     - postgresqldb:database

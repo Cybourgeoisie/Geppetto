@@ -5,7 +5,7 @@
  */
 
 // Autoloader
-require_once('autoloader.php');
+require_once("../vendor/autoload.php");
 
 // Database Connection
 define('DB_HOST', 'database');
