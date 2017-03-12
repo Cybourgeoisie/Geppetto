@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Program Gateway - kickstart the program
+ * Program Autoloader - find and load in the Geppetto classes
  */
 
 // Define the autoloader

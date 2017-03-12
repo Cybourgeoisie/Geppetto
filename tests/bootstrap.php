@@ -1,4 +1,4 @@
 <?php
 
-// Require the autoloader in order to run our tests
-require_once('../src/autoloader.php');
+// Enter through the gateway in order to run our tests
+require_once('../src/gateway.php');
