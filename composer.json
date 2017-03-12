@@ -1,0 +1,17 @@
+{
+    "name": "cybourgeoisie/geppetto",
+    "description": "Simplified Object Relational Mapper for PHP 7 and PostgreSQL",
+    "homepage": "https://github.com/Cybourgeoisie/Geppetto",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Richard Benjamin Heidorn",
+            "email": "rbenheidorn@gmail.com",
+            "homepage": "http://cybourgeoisie.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    }
+}

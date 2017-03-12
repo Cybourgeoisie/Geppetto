@@ -1,19 +1,18 @@
 # Using Docker
 
 ## Ways to debug:
-	```bash
+
+	```
 	docker logs [container]
 	```
 
 ## Development Builds
-	## At root (/)
-	```bash
-	docker build -f Dockerfile-tests -t geppetto-tests .
-	```
 
-	## At /sql/
-	```bash
-	docker build -f Dockerfile-postgresql -t geppetto-postgresql .
+	At root (/):
+
+	```
+	docker build -f ./docker/Dockerfile-tests -t geppetto-tests .
+	docker build -f ./docker/Dockerfile-postgresql -t geppetto-postgresql .
 	```
 
 
@@ -21,13 +20,15 @@
 
 ## Instructions: Using Docker Compose
 
-	## Run docker compose to set up the database container and web-accessible container
-	```bash
+	Run docker compose to set up the containers:
+	
+	```
 	docker-compose up -d
 	docker-compose down
 	```
 
-	## Entering the containers
-	```bash
+	Entering the containers:
+	
+	```
 	docker exec -it geppetto-tests /bin/bash
 	```
