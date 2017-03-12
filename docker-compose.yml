@@ -1,5 +1,10 @@
 version: '2'
 services:
+  postgresqldb:
+    image: geppetto-postgresql
+    container_name: geppetto-postgresql
+    volumes:
+    - ./log/postgresql:/var/log/postgresql
   geppetto:
     image: geppetto-tests
     container_name: geppetto-tests
@@ -10,8 +15,3 @@ services:
     links:
     - postgresqldb:database
     tty: true
-  postgresqldb:
-    image: geppetto-postgresql
-    container_name: geppetto-postgresql
-    volumes:
-    - ./log/postgresql:/var/log/postgresql

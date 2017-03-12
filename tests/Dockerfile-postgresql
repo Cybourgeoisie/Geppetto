@@ -1,0 +1,24 @@
+FROM postgres:9.5.6
+RUN apt-get update
+
+# To come: PostGIS support
+#RUN apt-get install -y --no-install-recommends \
+#		postgresql-9.5-postgis-2.2 \
+#		postgis
+
+# Clean, lean
+RUN rm -rf /var/lib/apt/lists/*
+
+# Copy the data into the database
+COPY ./tests/data/postgresql/ /docker-entrypoint-initdb.d/
+
+# Expose certain volumes for debugging
+VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
+
+# And set our testing user and database
+ENV POSTGRES_USER admin
+ENV POSTGRES_PASSWORD password
+ENV POSTGRES_DB geppetto_tests
+
+# Run postgresql
+CMD ["postgres"]

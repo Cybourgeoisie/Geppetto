@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
  */
 final class DatabaseHandlerTest extends TestCase
 {
-	public function testIsSingleton(): void
+	public function testIsSingleton()//: void
 	{
 		$db_handler = Geppetto\DatabaseHandler::init();
 
@@ -19,7 +19,7 @@ final class DatabaseHandlerTest extends TestCase
 		);
 	}
 
-	public function testProhibitCreatingNewClass(): void
+	public function testProhibitCreatingNewClass()//: void
 	{
 		$this->expectException(Error::class);
 
