@@ -25,7 +25,7 @@ class Utility
 		$class  = $backtrace_info['class'];
 		$method = $backtrace_info['function'];
 
-		throw new Exception($class . '::' . $method . '@' . $line . ' - ' . $msg);
+		throw new \Exception($class . '::' . $method . '@' . $line . ' - ' . $msg);
 	}
 	
 	/**
