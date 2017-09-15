@@ -62,14 +62,8 @@ abstract class ObjectFoundation extends Foundation
 
 	private function _getClassNameFromReference($name)
 	{
-		// IAS-specific
-		if (class_exists($name . 'Dao') && is_subclass_of($name . 'Dao', '\Geppetto\Object'))
-		{
-			// Create the class name
-			$class_name = $name . 'Dao';
-		}
 		// Generic
-		else if (class_exists($name) && is_subclass_of($name, '\Geppetto\Object'))
+		if (class_exists($name) && is_subclass_of($name, '\Geppetto\Object'))
 		{
 			// Create the class name
 			$class_name = $name;
@@ -161,7 +155,11 @@ abstract class ObjectFoundation extends Foundation
 	private function _getTableNameFromClassName()
 	{
 		// Get the active class's name using late static bindings
-		$class_name = get_called_class();
+		$namespace_class_name = get_called_class();
+
+		// Strip away the namespace
+		$class_name_parts = explode('\\', $namespace_class_name);
+		$class_name = array_pop($class_name_parts);
 
 		// Parse the class name
 		$table_name = $this->_deriveTableName($class_name);
